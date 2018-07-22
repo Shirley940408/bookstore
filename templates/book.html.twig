@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+{% block content %}
+   
+   <div class="container-fluid">
+     <div class="row py-5 px-5">
+       <div class="col-4 py-4">
+         <img class="w-100" src="./img/harry1.jpg"></img>
+       </div>
+       <div class="col-8 py-4">
+         <div class="title">
+           {{findbook.bname}}
+         </div>
+         <div class="summary">
+           {{findbook.summary}}
+         </div>
+          <div>Category:</div>
+         <ul class="nav">         
+          {% for comment in findCategory %}
+          <li class="nav-item pr-3">
+             {{comment}}
+          </li>
+          {% endfor %}
+        </ul>
+         <div>
+           Description:
+           <p>{{findbook.description}}</p>
+         </div>
+       </div>
+     </div>
+   </div>
+
+{% endblock %}
